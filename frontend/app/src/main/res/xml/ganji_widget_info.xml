@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    minWidth/minHeight = 위젯이 놓일 수 있는 가장 작은 크기 (하루만 보여주는 크기).
+    maxResizeWidth/Height = 설정의 GRID_5X6 최소 크기(5*70-30=320dp, 6*70-30=390dp)까지 키울 수 있게.
+    실제로 "4x5냐 5x6이냐 하루냐"를 가르는 건 이 파일이 아니라
+    GanjiGlanceWidget의 SizeMode.Responsive + 설정값(minCalendarSize) 조합입니다.
+-->
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="130dp"
+    android:minHeight="120dp"
+    android:targetCellWidth="2"
+    android:targetCellHeight="2"
+    android:resizeMode="horizontal|vertical"
+    android:minResizeWidth="130dp"
+    android:minResizeHeight="120dp"
+    android:maxResizeWidth="320dp"
+    android:maxResizeHeight="390dp"
+    android:updatePeriodMillis="0"
+    android:widgetCategory="home_screen"
+    android:previewImage="@drawable/ic_logo"
+    android:initialLayout="@layout/glance_default_loading_layout" />

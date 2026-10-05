@@ -9,13 +9,11 @@ import androidx.compose.ui.unit.sp
 import androidx.glance.GlanceId
 import androidx.glance.GlanceModifier
 import androidx.glance.LocalSize
-// Glance 버전에 따라 ColorProvider 패키지가 다를 수 있어요.
-// 만약 import가 안 잡히면 androidx.glance.unit.ColorProvider 로 바꿔보세요.
-import androidx.glance.color.ColorProvider
+import androidx.glance.unit.ColorProvider
 import androidx.glance.action.clickable
 import androidx.glance.appwidget.GlanceAppWidget
 import androidx.glance.appwidget.SizeMode
-import androidx.glance.appwidget.action.actionStartActivity
+import androidx.glance.action.actionStartActivity
 import androidx.glance.appwidget.appWidgetBackground
 import androidx.glance.appwidget.cornerRadius
 import androidx.glance.appwidget.provideContent
@@ -24,7 +22,6 @@ import androidx.glance.layout.Alignment
 import androidx.glance.layout.Box
 import androidx.glance.layout.Column
 import androidx.glance.layout.Row
-import androidx.glance.layout.defaultWeight
 import androidx.glance.layout.fillMaxSize
 import androidx.glance.layout.fillMaxWidth
 import androidx.glance.layout.padding
@@ -86,7 +83,7 @@ private fun GanjiWidgetContent(context: Context) {
             .appWidgetBackground()
             .cornerRadius(16.dp)
             .background(ColorProvider(BgBase.copy(alpha = widget.backgroundOpacity.alpha)))
-            .clickable(actionStartActivity<MainActivity>())
+            .clickable(actionStartActivity(MainActivity::class.java))
             .padding(6.dp)
     ) {
         when (mode) {
